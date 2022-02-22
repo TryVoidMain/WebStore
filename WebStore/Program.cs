@@ -5,7 +5,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 var app = builder.Build();
 
-var greetings = app.Configuration["ServerGreetings"];
-app.MapGet("/", () =>greetings);
+app.UseRouting();
+
+app.MapGet("/", () => app.Configuration["ServerGreetings"]);
+
+//app.MapDefaultControllerRoute();
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
