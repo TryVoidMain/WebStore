@@ -6,9 +6,9 @@ namespace WebStore.Controllers
     public class HomeController : Controller
     {
         private static readonly List<Employee> _Employees = new()
-        { 
-            new Employee { Id=1, LastName = "Иванов", FirstName = "Vasya", Patronymic="Vasilyevich"}
-        }
+        {
+            new Employee { Id = 1, LastName = "Иванов", FirstName = "Vasya", Patronymic = "Vasilyevich" }
+        };
 
         public readonly IConfiguration _Configuration;
         public HomeController(IConfiguration Configuration)
